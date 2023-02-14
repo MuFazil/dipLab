@@ -12,7 +12,7 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 scaledUser1 = gray.copy()
 
 # Scaling by factor of 2
-scaledUser2 = np.zeros((gray.shape[0]*2, gray.shape[1]*2),dtype=np.uint8)
+scaledUser2 = np.zeros((gray.shape[0]*2, gray.shape[1]*2), dtype=np.uint8)
 for i in range(gray.shape[0]*2):
     for j in range(gray.shape[1]*2):
         x, y = i / 2, j / 2
@@ -34,7 +34,7 @@ for i in range(gray.shape[0]*2):
             x1, y2] + a * b * gray[x2, y2]
 
 # Scaling by factor of 0.5
-scaledUser05 = np.zeros((gray.shape[0]//2, gray.shape[1]//2),dtype=np.uint8)
+scaledUser05 = np.zeros((gray.shape[0]//2, gray.shape[1]//2), dtype=np.uint8)
 for i in range(gray.shape[0]//2):
     for j in range(gray.shape[1]//2):
         x, y = i * 2, j * 2
@@ -58,13 +58,16 @@ for i in range(gray.shape[0]//2):
 # Using in-built functions
 
 # Scaling by factor of 1
-scaledBuiltin1 = cv2.resize(gray, None, fx=1, fy=1, interpolation=cv2.INTER_LINEAR)
+scaledBuiltin1 = cv2.resize(gray, None, fx=1, fy=1,
+                            interpolation=cv2.INTER_LINEAR)
 
 # Scaling by factor of 2
-scaledBuiltin2 = cv2.resize(gray, None, fx=2, fy=2, interpolation=cv2.INTER_LINEAR)
+scaledBuiltin2 = cv2.resize(gray, None, fx=2, fy=2,
+                            interpolation=cv2.INTER_LINEAR)
 
 # Scaling by factor of 0.5
-scaledBuiltin05 = cv2.resize(gray, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_LINEAR)
+scaledBuiltin05 = cv2.resize(
+    gray, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_LINEAR)
 
 # Display the original and scaled images
 cv2.imshow("Original", gray)
@@ -76,6 +79,7 @@ cv2.imshow("Scaled by factor of 0.5", scaledUser05)
 cv2.imshow("Scaled by factor of 1 (Built-in Function)", scaledBuiltin1)
 cv2.imshow("Scaled by factor of 2 (Built-in Function)", scaledBuiltin2)
 cv2.imshow("Scaled by factor of 0.5 (Built-in Function)", scaledBuiltin05)
+
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
