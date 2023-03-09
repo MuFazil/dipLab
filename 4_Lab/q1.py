@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Load the image
-img = cv2.imread("PISA.jpg")
+img = cv2.imread("D:\SEM6\dipLab\4_Lab\Picture_5.png")
 
 # Convert the image to grayscale for processing
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
